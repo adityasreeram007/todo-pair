@@ -1,0 +1,44 @@
+.bodyx{
+  background-color: black;
+  font-style: ubuntu;
+}
+.box{
+  background-color: white;
+  
+  height:40vh;
+  width:80%;
+  top:50%;
+  bottom:50%;
+  border-radius: 1%;
+ 
+}
+.inp{
+
+  margin-top:5vh;
+  /* border-radius:20px; */
+  text-align: center;
+  /* border-color: black; */
+  width:80%;
+  height:5vh;
+  border-color: #282c34;
+}
+::placeholder{
+  text-align: center;
+}
+.heading{
+  margin-top: 20vh;
+  font-family: ubuntu;
+  font-size: 10vh;
+  color:white;
+}
+p{
+    font-size: large;
+}
+.keep{
+  margin-top:5vh;
+  /* border-radius:20px; */
+  text-align: center;
+}
+.auth{
+  margin-top: 3vh;;
+}
