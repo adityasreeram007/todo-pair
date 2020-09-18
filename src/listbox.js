@@ -39,6 +39,27 @@ rows=function(){
         </table></center> 
     );
 }
+boxi=function(){
+var arr=[]
+for (var i in this.state.values){
+   arr.push ( <div className="sep-box">
+       <div className='time'>
+    {this.state.values[i][2]}
+    </div>
+    <div className='Box-head'>
+        {this.state.values[i][0]}
+    </div>
+    <div className='desc'>
+    {this.state.values[i][1]}
+    </div>
+    
+    <div className='desc'>
+    {this.state.values[i][3]}
+    </div>
+
+    </div>);}
+return arr;
+}
 render(){
     return (
         <div>
@@ -47,7 +68,9 @@ render(){
     <center><div className="todobox">
         <h2>Sceduled List</h2>
         <hr/>
-        {this.rows()}
+       
+                 {this.boxi()}
+            
         <h6>"</h6>
 
     </div></center>
