@@ -14,7 +14,7 @@ componentDidMount(){
     .then((response) => {
         let { data }=response['data']
         this.setState({'values':data})
-        console.log(this.state.values)
+        // console.log(this.state.values)
     });
     
     
@@ -44,7 +44,7 @@ var arr=[]
 for (var i in this.state.values){
    arr.push ( <div className="sep-box">
        <div className='time'>
-    {this.state.values[i][2]}
+    UTC {this.state.values[i][2]}
     </div>
     <div className='Box-head'>
         {this.state.values[i][0]}
@@ -71,7 +71,7 @@ render(){
        
                  {this.boxi()}
             
-        <h6>"</h6>
+        <h6 className="fetch">Featching Data...</h6>
 
     </div></center>
 
