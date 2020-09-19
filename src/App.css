@@ -3,6 +3,7 @@
   font-style: ubuntu;
   
 }
+html, body {padding:0; margin:0; }
 .box{
   background-color: black;
   color: white;
@@ -14,7 +15,7 @@
  
 }
 .greet{
-  margin-top: 10%;
+  margin-top: 3%;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 .inp{
@@ -26,6 +27,7 @@
   width:80%;
   height:5vh;
   border-color: #282c34;
+  color:black;
 }
 ::placeholder{
   text-align: center;
@@ -40,7 +42,7 @@ p{
     font-size: large;
 }
 .keep{
-  margin-top:5vh;
+  margin-top:2%;
   /* border-radius:20px; */
   text-align: center;
 }
@@ -61,7 +63,7 @@ h1{
 }
 hr{
   
-  background-color: white;
+  background-color: black;
   width: 40%;
 }
 table{
@@ -77,6 +79,7 @@ table{
   border-radius: 5px;
 }
 .Box-head{
+  margin-top: 0.5%;
   font-size: x-large;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
@@ -87,7 +90,23 @@ table{
   padding-top: 5px;
 }
 .fetch{
-  margin-top: 20%;
+  margin-top: 13%;
   font-size: xx-large;
   font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.btnsub{
+  margin-top: 5vh;
+}
+.bttn{
+  
+  margin-top: 1.5%;
+  margin-bottom: 1%;
+  
+}
+footer{
+  background-color: black;position: fixed; bottom: 0; left: 0; right: 0;
+}
+.name{
+  font-size: large;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }

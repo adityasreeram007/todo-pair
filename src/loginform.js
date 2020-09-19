@@ -54,6 +54,7 @@ class Loginform extends Component{
        this.auth=true;
        localStorage.setItem('logged',true)
        localStorage.setItem('team',result['Team'])
+       localStorage.setItem('uname',this.state.usename)
        window.location.reload(false);
        
      }
@@ -111,9 +112,9 @@ render() {
     
     <input className="inp" onChange={this.setUsername} type='text' placeholder="Username!" name="username" id="ux" required/><br></br>
     <input className="inp" onChange={this.setPassword} type='password' placeholder="Password!" name='password' id="px" required/><br></br>
-    <p><input className="keep" type="checkbox"  required/> keep me logged in!</p>
     
-        <input className="btn btn-warning auth" onClick={()=>this.validate()} value="Authenticate"  type='submit'/>
+    
+        <input className="btnsub btn btn-warning auth" onClick={()=>this.validate()} value="Authenticate"  type='submit'/>
     
   </div>
   </center>
