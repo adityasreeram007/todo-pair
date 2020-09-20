@@ -65,6 +65,7 @@ return arr;
 async logout(){
     window.localStorage.clear();
     window.location.reload(false)
+    
 }
 addList(){
     var title=document.getElementById('title').value;
@@ -79,7 +80,10 @@ addList(){
         axios.post("https://todo-pair-api.herokuapp.com/putdata",{"title":title,"desc":desc,'team':teamname,'user':user})
         .then((response) => {
             if (response.status){
-            window.location.reload(false);}
+            
+            window.location.reload(false);
+           
+        }
             // console.log(this.state.values)
         });
 
