@@ -112,33 +112,40 @@ footer{
 }
 .inputlist{
   width:100%;
-  background-color:black;
-  height:150px;
-  margin-top: 2%;
+
+  height:140px;
+  margin-top: 1.5%;
   border-radius: 5px;
 }
 .titlebox{
-  width:25%;
-  height:20%;
-margin-top: 1%;
-border-radius: 5px;
+  width:45%;
+  height:30%;
+  margin-top: 1.5%;
+  border-radius: 5px;
+  text-align: center;
 }
 .descbox{
-  width:70%;
+  width:80%;
   height:40%;
-margin-top: 1.5%;
-border-radius: 5px;
+  margin-top: 2%;
+  border-radius: 5px;
+  text-align: center;
 }
 .descbox::placeholder{
   font-size: large;
 }
 .add{
   font-size: large;
-  height:20%;
-  
+  height:30%;
   text-align:center;
   padding: 2px;
-  margin-top: -0.125%;
-  width:10%;
+  margin-top: -0.275%;
+  width:20%;
   margin-left: 4.2%;
+}
+.ele{
+  margin-top: 5%;
+  font-family: sans-serif;
+  font-weight: 300;
+  font-size: xx-large;
 }

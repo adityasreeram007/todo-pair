@@ -74,7 +74,7 @@ render(){
     <center><h1>Welcome back to {teamname}</h1></center></div>
     <center className="greet name">Hope it's an Awesome {dayobj[day]}!</center>
     <center><div className="todobox">
-        <h2>ScheduleD LisT</h2>
+        <h2>Schedule Work</h2>
         <div className="inputlist" >
             <input className="titlebox" placeholder="Title of the Event!"></input>
             <button className="add btn btn-danger" type="button" value='+'>Add</button>
@@ -85,6 +85,7 @@ render(){
             
         </div>
         <hr/>
+        <div className="ele">Elements</div>
        
                  {this.boxi()}
             
