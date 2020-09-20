@@ -4,7 +4,7 @@ import './App.css';
 import axios from 'axios'
 var teamname=localStorage.getItem('team'); 
 var user=localStorage.getItem('uname')
-var day=new Date().getDay();
+
 var dayobj={0:"Sunday",1:"Monday",2:"Tuesday",3:"Wednesday",4:"Thursday",5:"Friday",6:"Saturday"}
 class ListBox extends Component{
 state={
@@ -14,10 +14,11 @@ componentDidMount(){
     axios.post("https://todo-pair-api.herokuapp.com/getdata",{"teamname":teamname})
     .then((response) => {
         let { data }=response['data']
+        console.log(response)
         this.setState({'values':data})
-        // console.log(this.state.values)
+        console.log(this.state.values)
     });
-    
+    console.log(this.state.values)
     
 }
 // rows=function(){
@@ -65,6 +66,26 @@ async logout(){
     window.localStorage.clear();
     window.location.reload(false)
 }
+addList(){
+    var title=document.getElementById('title').value;
+    var desc=document.getElementById('desc').value;
+    if (title==='' || desc===''){
+        document.getElementById('title').value='';
+        document.getElementById('desc').value='';
+        return 
+
+    }
+    
+        axios.post("https://todo-pair-api.herokuapp.com/putdata",{"title":title,"desc":desc,'team':teamname,'user':user})
+        .then((response) => {
+            if (response.status){
+            window.location.reload(false);}
+            // console.log(this.state.values)
+        });
+
+    
+    
+}
 render(){
     return (
         <div>
@@ -72,18 +93,20 @@ render(){
         <div className="greet">
     <center className='name'>Hola {user}!</center>
     <center><h1>Welcome back to {teamname}</h1></center></div>
-    <center className="greet name">Hope it's an Awesome {dayobj[day]}!</center>
+    <center className="greet name">Hope it's an Awesome {dayobj[new Date().getDay()]}!</center>
     <center><div className="todobox">
         <h2>Schedule Work</h2>
+        
         <div className="inputlist" >
-            <input className="titlebox" placeholder="Title of the Event!"></input>
-            <button className="add btn btn-danger" type="button" value='+'>Add</button>
+            <input className="titlebox" placeholder="Title of the Event!" id="title" required></input>
+            <button className="add btn btn-danger" type="submit" value='+'  onClick={()=>this.addList()}>Add</button>
 
             <br></br>
-            <input className="descbox" placeholder="Description!"></input>
+            <input className="descbox" placeholder="Description!" id="desc" required></input>
             <br></br>
             
         </div>
+        
         <hr/>
         <div className="ele">Elements</div>
        
@@ -93,8 +116,8 @@ render(){
 
     </div></center>
         <footer><center>
-        <button  class=" bttn btn btn-default btn-danger" onClick={()=>this.logout()}>
-          <span class="glyphicon glyphicon-log-out"></span> Log out
+        <button  className=" bttn btn btn-default btn-danger" onClick={()=>this.logout()}>
+          <span className="glyphicon glyphicon-log-out"></span> Log out
         </button></center>
         </footer>
 </div>
