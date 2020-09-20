@@ -4,6 +4,8 @@ import './App.css';
 import axios from 'axios'
 var teamname=localStorage.getItem('team'); 
 var user=localStorage.getItem('uname')
+var day=new Date().getDay();
+var dayobj={0:"Sunday",1:"Monday",2:"Tuesday",3:"Wednesday",4:"Thursday",5:"Friday",6:"Saturday"}
 class ListBox extends Component{
 state={
     'values':[]
@@ -70,8 +72,18 @@ render(){
         <div className="greet">
     <center className='name'>Hola {user}!</center>
     <center><h1>Welcome back to {teamname}</h1></center></div>
+    <center className="greet name">Hope it's an Awesome {dayobj[day]}!</center>
     <center><div className="todobox">
         <h2>ScheduleD LisT</h2>
+        <div className="inputlist" >
+            <input className="titlebox" placeholder="Title of the Event!"></input>
+            <button className="add btn btn-danger" type="button" value='+'>Add</button>
+
+            <br></br>
+            <input className="descbox" placeholder="Description!"></input>
+            <br></br>
+            
+        </div>
         <hr/>
        
                  {this.boxi()}
