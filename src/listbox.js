@@ -11,7 +11,7 @@ state={
     'values':[]
 }
 componentDidMount(){
-    axios.post("http://127.0.0.1:5001/getdata",{"teamname":teamname})
+    axios.post("https://todo-pair-api.herokuapp.com/getdata",{"teamname":teamname})
     .then((response) => {
         let { data }=response['data']
         console.log(response)
@@ -77,7 +77,7 @@ addList(){
 
     }
     
-        axios.post("http://127.0.0.1:5001/putdata",{"title":title,"desc":desc,'team':teamname,'user':user})
+        axios.post("https://todo-pair-api.herokuapp.com/putdata",{"title":title,"desc":desc,'team':teamname,'user':user})
         .then((response) => {
             if (response.status){
             
