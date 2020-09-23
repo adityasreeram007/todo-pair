@@ -11,7 +11,7 @@ state={
     'values':[]
 }
 componentDidMount(){
-    axios.post("https://todo-pair-api.herokuapp.com/getdata",{"teamname":teamname})
+    axios.post("http://127.0.0.1:5001/getdata",{"teamname":teamname})
     .then((response) => {
         let { data }=response['data']
         console.log(response)
@@ -46,17 +46,17 @@ var arr=[]
 for (var i in this.state.values){
    arr.push ( <div className="sep-box">
        <div className='time'>
-    UTC {this.state.values[i][2]}
+    UTC {this.state.values[i][3]}
     </div>
     <div className='Box-head'>
-        {this.state.values[i][0]}
+        {this.state.values[i][1]}
     </div>
     <div className='desc'>
-    {this.state.values[i][1]}
+    {this.state.values[i][2]}
     </div>
     
     <div className='desc'>
-    {this.state.values[i][3]}
+    {this.state.values[i][4]}
     </div>
     
     </div>);}
@@ -77,7 +77,7 @@ addList(){
 
     }
     
-        axios.post("https://todo-pair-api.herokuapp.com/putdata",{"title":title,"desc":desc,'team':teamname,'user':user})
+        axios.post("http://127.0.0.1:5001/putdata",{"title":title,"desc":desc,'team':teamname,'user':user})
         .then((response) => {
             if (response.status){
             
