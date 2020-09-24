@@ -11,6 +11,7 @@ state={
     'values':[]
 }
 componentDidMount(){
+    
     axios.post("https://todo-pair-api.herokuapp.com/getdata",{"teamname":teamname})
     .then((response) => {
         let { data }=response['data']
@@ -19,6 +20,12 @@ componentDidMount(){
         console.log(this.state.values)
     });
     console.log(this.state.values)
+    
+   
+        
+    
+    
+
     
 }
 // rows=function(){
@@ -46,8 +53,12 @@ var arr=[]
 for (var i in this.state.values){
    arr.push ( <div className="sep-box">
        <div className='time'>
-    UTC {this.state.values[i][3]}
+    <span className="del">
+        <button className="btn btn-danger" id={this.state.values[i][3]} onClick={()=>this.delList(this.state.values[i][3])}><span className="glyphicon glyphicon-trash"></span></button> 
+        
+    </span><span className="timex" >UTC {this.state.values[i][3]}</span>
     </div>
+    
     <div className='Box-head'>
         {this.state.values[i][1]}
     </div>
@@ -58,6 +69,7 @@ for (var i in this.state.values){
     <div className='desc'>
     {this.state.values[i][4]}
     </div>
+
     
     </div>);}
 return arr;
@@ -66,6 +78,19 @@ async logout(){
     window.localStorage.clear();
     window.location.reload(false)
     
+}
+delList(id){
+    console.log(id)
+    axios.post("https://todo-pair-api.herokuapp.com/delete",{"time":id})
+    .then((response) => {
+        if (response.status){
+        
+        window.location.reload(false);
+       
+    }
+        // console.log(this.state.values)
+    });
+
 }
 addList(){
     var title=document.getElementById('title').value;
@@ -116,7 +141,7 @@ render(){
        
                  {this.boxi()}
             
-        <h6 className="fetch">Fetching Data...</h6>
+        <h6 className="fetch" id="fid">Fetching Data...</h6>
 
     </div></center>
         <footer><center>
